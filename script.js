@@ -4,7 +4,11 @@ function carregar() {
     var data = new Date()
     var hora = data.getHours()
     var min = data.getMinutes()
-    msg.innerHTML = `Agora são exatamente ${hora}:${min}h.`
+    if(min >= 0 && min < 10) {
+        msg.innerHTML = `Agora são exatamente ${hora}:0${min}h.`
+    } else {
+        msg.innerHTML = `Agora são exatamente ${hora}:${min}h.`
+    }
     if (hora >= 0 && hora <12) {
         foto.innerHTML = '<img src="imagens/manhã_elipse.png">'
         document.body.style.background = '#fbe5ae'
